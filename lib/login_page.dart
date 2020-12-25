@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_auth/register_page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       body: SafeArea(
           child: CustomScrollView(
         slivers: [
@@ -171,8 +173,30 @@ class LoginPage extends StatelessWidget {
           SliverFillRemaining(
             hasScrollBody: false,
             child: Container(
-              color: Colors.red,
-              child: Text("Sliver Fill Remaining"),
+              alignment: Alignment.bottomCenter,
+              margin: EdgeInsets.only(bottom: 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Don\'t have acoount ?',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage()));
+                    },
+                    child: Text(
+                      "Register here",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w700),
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],
