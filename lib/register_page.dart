@@ -4,11 +4,11 @@ import 'package:flutter_firebase_auth/login_page.dart';
 import 'package:flutter_firebase_auth/profile_page.dart';
 
 class RegisterPage extends StatelessWidget {
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final _emailController = TextEditingController();
-    final _passController = TextEditingController();
-
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: SafeArea(
